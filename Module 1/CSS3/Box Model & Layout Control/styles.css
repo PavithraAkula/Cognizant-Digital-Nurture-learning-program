@@ -1,0 +1,58 @@
+.eventCard {
+  border: 2px solid #4CAF50;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 500px;
+  background-color: #f0fff0;
+  font-family: Arial, sans-serif;
+}
+
+.highlightable:focus {
+  outline: 3px solid #ff9800;
+  outline-offset: 2px;
+}
+
+.hidden-text {
+  visibility: hidden;
+  background-color: yellow;
+  border: 1px solid orange;
+}
+
+.none-text {
+  display: none;
+  background-color: pink;
+  border: 1px solid red;
+}
+
+form#signupForm {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form#signupForm label {
+  font-weight: bold;
+}
+
+form#signupForm input {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form#signupForm button {
+  padding: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+form#signupForm button:hover {
+  background-color: #45a049;
+}

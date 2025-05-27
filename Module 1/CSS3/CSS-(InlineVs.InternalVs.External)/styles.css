@@ -1,0 +1,13 @@
+/* General Styles */
+.event-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+/* Header Styles (moved from internal if reused) */
+header h2 {
+  font-size: 24px;
+}

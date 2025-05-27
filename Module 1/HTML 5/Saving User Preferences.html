@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Save User Preferences</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label, select, button {
+      font-size: 1.1em;
+      margin: 10px 0;
+      display: block;
+    }
+    button {
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    #status {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Choose Your Preferred Event</h1>
+
+  <label for="eventType">Event Type:</label>
+  <select id="eventType">
+    <option value="" disabled selected>Select an event type</option>
+    <option value="workshop">Workshop</option>
+    <option value="music">Music Festival</option>
+    <option value="art">Art Exhibit</option>
+  </select>
+
+  <button id="clearBtn">Clear Preferences</button>
+
+  <p id="status"></p>
+
+  <script>
+    const eventSelect = document.getElementById('eventType');
+    const clearBtn = document.getElementById('clearBtn');
+    const status = document.getElementById('status');
+
+    // On page load, check if a preference exists in localStorage
+    window.onload = () => {
+      const savedEvent = localStorage.getItem('preferredEvent');
+      if (savedEvent) {
+        eventSelect.value = savedEvent;
+        status.textContent = `Loaded saved preference: ${capitalize(savedEvent)}`;
+      }
+    };
+
+    eventSelect.addEventListener('change', () => {
+      const selected = eventSelect.value;
+      if (selected) {
+        localStorage.setItem('preferredEvent', selected);
+        status.textContent = `Preference saved: ${capitalize(selected)}`;
+      }
+    });
+
+    clearBtn.addEventListener('click', () => {
+      localStorage.clear();
+      sessionStorage.clear();
+      eventSelect.value = "";
+      status.textContent = "Preferences cleared.";
+    });
+    function capitalize(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Feedback Form</title>
+  <style>
+    #enlargedImg {
+      display: none;
+      max-width: 400px;
+      margin-top: 10px;
+      border: 2px solid #444;
+      border-radius: 8px;
+    }
+    #charCount {
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Event Feedback</h1>
+  <form id="feedbackForm">
+    <label for="phone">Phone Number:</label><br />
+    <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit phone" onblur="validatePhone()" required /><br /><br />
+    
+    <label for="eventSelect">Select Event:</label><br />
+    <select id="eventSelect" onchange="showFee()">
+      <option value="" disabled selected>Choose an event</option>
+      <option value="50">Community Workshop ($50)</option>
+      <option value="30">Music Festival ($30)</option>
+      <option value="20">Art Exhibit ($20)</option>
+    </select>
+    <p id="feeDisplay"></p>
+    <label for="feedback">Your Feedback:</label><br />
+    <textarea id="feedback" rows="5" cols="30" onkeyup="countChars()" placeholder="Write your feedback..."></textarea><br />
+    <span id="charCount">0 characters</span><br /><br />
+    <button type="button" onclick="submitForm()">Submit Feedback</button>
+  </form> 
+  <h2>Double-click the image to enlarge</h2>
+  <img id="eventImg" src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg" 
+       alt="Community Event" width="200" ondblclick="enlargeImg()" style="cursor:pointer; border-radius:8px;" />
+  <br />
+  <img id="enlargedImg" src="https://images.pexels.com/photos/3184436/pexels-photo-3184436.jpeg" alt="Enlarged Event" /> 
+  <script>
+    function validatePhone() {
+      const phoneInput = document.getElementById('phone');
+      const phone = phoneInput.value.trim();
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+        phoneInput.focus();
+      }
+    }
+    function showFee() {
+      const select = document.getElementById('eventSelect');
+      const feeDisplay = document.getElementById('feeDisplay');
+      if (select.value) {
+        feeDisplay.textContent = `Event Fee: $${select.value}`;
+      } else {
+        feeDisplay.textContent = '';
+      }
+    }
+
+    function submitForm() {
+      alert('Thank you for your feedback!');
+    }
+
+    function enlargeImg() {
+      const enlargedImg = document.getElementById('enlargedImg');
+      enlargedImg.style.display = enlargedImg.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function countChars() {
+      const feedback = document.getElementById('feedback');
+      const charCount = document.getElementById('charCount');
+      charCount.textContent = `${feedback.value.length} characters`;
+    }
+  </script>
+</body>
+</html>

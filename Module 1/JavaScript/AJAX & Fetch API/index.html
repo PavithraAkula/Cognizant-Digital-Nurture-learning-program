@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Event Registration with AJAX</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-left: 10px;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #loading {
+      display: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Register for a Community Event</h1>
+  <form id="registrationForm">
+    <label>
+      Name:
+      <input type="text" name="name" />
+      <span class="error" id="nameError"></span>
+    </label>
+
+    <label>
+      Email:
+      <input type="email" name="email" />
+      <span class="error" id="emailError"></span>
+    </label>
+
+    <label>
+      Event:
+      <select name="event">
+        <option value="">Select an event</option>
+        <option value="Music Concert">Music Concert</option>
+        <option value="Art Workshop">Art Workshop</option>
+        <option value="Tech Meetup">Tech Meetup</option>
+      </select>
+      <span class="error" id="eventError"></span>
+    </label>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="loading">Submitting registration...</div>
+  <div id="result"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>

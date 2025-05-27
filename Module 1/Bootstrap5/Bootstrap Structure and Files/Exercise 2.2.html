@@ -1,0 +1,18 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+<!-- Your Content -->
+<div class="container text-center mt-5">
+  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip example">
+    Hover me
+  </button>
+</div>
+
+<!-- Bootstrap Bundle with Popper (Local) -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Initialize Tooltip -->
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el))
+</script>

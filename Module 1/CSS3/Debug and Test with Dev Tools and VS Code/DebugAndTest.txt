@@ -1,0 +1,47 @@
+Task Instructions:
+
+Open your webpage in Google Chrome.
+
+Open Developer Tools:
+
+Press F12 or right-click on the page and choose Inspect.
+
+Simulate Different Screen Sizes:
+
+Click the Toggle device toolbar button (phone/tablet icon) or press Ctrl+Shift+M (Windows) / Cmd+Shift+M (Mac).
+
+Select device presets like iPhone, iPad, or drag to custom widths.
+
+Observe how the page layout changes and check for any broken or misaligned elements.
+
+Inspect Styles and Test Changes:
+
+In the Elements panel, click to select the element you want to debug.
+
+On the right, in the Styles pane, view all CSS rules applied to that element.
+
+Edit CSS properties live by clicking on values (e.g., change font-size: 18px to 16px).
+
+Toggle CSS rules on/off by checking/unchecking them to test their effect.
+
+Check if External CSS is Loaded:
+
+Go to the Network tab in DevTools.
+
+Refresh the page (F5).
+
+Filter by CSS files.
+
+Confirm your external stylesheet (e.g., styles.css) is loaded without errors (no 404 or failed requests).
+
+Use VS Code:
+
+Open your project folder in VS Code.
+
+Run your webpage using an extension like Live Server.
+
+Edit your CSS and HTML files in VS Code.
+
+Save your changes, and watch them reload live in the browser.
+
+Use

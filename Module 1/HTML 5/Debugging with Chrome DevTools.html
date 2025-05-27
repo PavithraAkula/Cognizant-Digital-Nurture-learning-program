@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Debugging Practice</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: teal;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Debugging Demo</h1>
+  <div id="box"></div>
+  <button onclick="changeBox()">Change Box</button>
+  <script>
+    function changeBox() {
+      const box = document.getElementById('box');
+      console.log('Button clicked, current color:', box.style.backgroundColor);
+      box.style.backgroundColor = 'redd';
+      setTimeout(() => {
+        box.style.backgroundColor = 'blue';
+        console.log('Box color reverted to blue');
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

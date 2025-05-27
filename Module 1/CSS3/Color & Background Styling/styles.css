@@ -1,0 +1,41 @@
+/* =================================== */
+/*     Color and Background Styling    */
+/* =================================== */
+
+/* Use HEX and RGBA for text and background */
+body {
+  background-color: #e0f7fa; /* fallback color */
+  background-image: url('city-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.87); /* slightly transparent black */
+}
+
+/* Gradient background for header */
+.main-header {
+  background: linear-gradient(to right, #004d40, #26a69a);
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Section title with gradient background */
+.event-section h2 {
+  background: linear-gradient(to right, #007BFF, #00BCD4);
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 20px;
+  text-align: center;
+}
+
+/* Card styling using RGBA */
+.event-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  margin: 20px;
+  border-left: 5px solid #007BFF;
+  border-radius: 8px;
+}

@@ -1,0 +1,7 @@
+Why CSS?
+
+
+CSS (Cascading Style Sheets) allows you to separate content (HTML) from design (style). It helps:
+Make your website visually appealing
+Apply consistent styles across pages
+Easily maintain or change design

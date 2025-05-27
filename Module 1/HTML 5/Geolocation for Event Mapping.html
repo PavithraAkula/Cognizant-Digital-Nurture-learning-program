@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geolocation for Event Mapping</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+    #error {
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Locate Nearest Events</h1>
+  <button id="findBtn">Find Nearby Events</button>
+
+  <div id="output"></div>
+  <div id="error"></div>
+
+  <script>
+    const findBtn = document.getElementById('findBtn');
+    const output = document.getElementById('output');
+    const errorDiv = document.getElementById('error');
+
+    findBtn.addEventListener('click', () => {
+      output.textContent = "Locating...";
+      errorDiv.textContent = "";
+
+      if (!navigator.geolocation) {
+        errorDiv.textContent = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      };
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+    });
+
+    function success(position) {
+      const latitude = position.coords.latitude.toFixed(6);
+      const longitude = position.coords.longitude.toFixed(6);
+      output.textContent = `Your Location: Latitude ${latitude}, Longitude ${longitude}`;
+    }
+
+    function error(err) {
+      switch(err.code) {
+        case err.PERMISSION_DENIED:
+          errorDiv.textContent = "Permission denied. Please allow location access.";
+          break;
+        case err.POSITION_UNAVAILABLE:
+          errorDiv.textContent = "Location information is unavailable.";
+          break;
+        case err.TIMEOUT:
+          errorDiv.textContent = "Location request timed out. Try again.";
+          break;
+        default:
+          errorDiv.textContent = "An unknown error occurred.";
+      }
+      output.textContent = "";
+    }
+  </script>
+
+</body>
+</html>

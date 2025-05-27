@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Promo Video</title>
+  <style>
+    #message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Event Promo Video</h1>
+
+  
+  <video id="promoVideo" width="600" controls oncanplay="videoReady()">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <p id="message"></p>
+
+  <script>
+   
+    function videoReady() {
+      const msg = document.getElementById('message');
+      msg.textContent = "Video ready to play";
+    }
+    window.onbeforeunload = function(event) {
+      event.preventDefault();
+      event.returnValue = ''; 
+      return '';
+    };
+  </script>
+</body>
+</html>

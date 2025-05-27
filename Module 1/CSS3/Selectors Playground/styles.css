@@ -1,0 +1,56 @@
+/* ================================== */
+/*           Reset Styles             */
+/* ================================== */
+
+/* Universal selector to remove default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================================== */
+/*        Element Selector (h2)       */
+/* ================================== */
+
+h2 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin: 20px;
+  text-align: center;
+}
+
+/* ================================== */
+/*           ID Selector              */
+/* ================================== */
+
+/* Style for banner header with ID */
+#mainHeader {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ================================== */
+/*         Class Selector             */
+/* ================================== */
+
+/* Event container styling */
+.eventCard {
+  background-color: #f5f5f5;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================== */
+/*        Grouping Selectors          */
+/* ================================== */
+
+h3, p {
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
